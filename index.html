@@ -1,259 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Shashank Yelagandula - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shashank Yelagandula Portfolio</title>
 
-<!-- Retro-modern & readable font -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Fira+Sans&display=swap" rel="stylesheet" />
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Fira+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    background: #000;
-    color: #eee;
-    font-family: 'Fira Sans', sans-serif;
-    overflow-x: hidden;
-  }
-  a {
-    color: #ff3366;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  a:hover, a:focus {
-    color: #3399ff;
-  }
-  h1, h2, h3 {
-    margin: 0 0 1rem 0;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #ff3366;
-  }
-  h2 {
-    color: #3399ff;
-  }
-  p {
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-    color: #ddd;
-  }
-  main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1.5rem 3rem;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Sans', sans-serif;
+      background: #000;
+      color: #eee;
+      padding: 0 1rem;
+    }
 
-  .intro {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #bbb;
-    margin-top: 1rem;
-  }
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
 
-  blockquote {
-    font-style: italic;
-    color: #888;
-    border-left: 4px solid #ff3366;
-    padding-left: 1rem;
-    margin: 1.5rem 0;
-  }
+    .resume-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #3399ff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-  nav.contact-links a {
-    margin: 0 1rem;
-    font-size: 1.1rem;
-  }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #ff3366;
+      margin-bottom: 0.5rem;
+    }
 
-  section {
-    margin-bottom: 4rem;
-  }
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
 
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+    section {
+      margin: 3rem auto;
+      max-width: 900px;
+    }
 
-  .skill-tag {
-    background: #ff3366;
-    color: #000;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
+    h2 {
+      color: #3399ff;
+      border-left: 4px solid #ff3366;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
 
-  /* Education */
-  .edu-item {
-    margin-bottom: 1.2rem;
-  }
-  .edu-item a {
-    font-weight: 600;
-  }
+    /* About */
+    .about {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
 
-  /* Contact form - unique layout */
-  .contact-box {
-    background: #111;
-    padding: 2rem;
-    border: 2px dashed #ff3366;
-    border-radius: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .contact-box label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #ccc;
-  }
-  .contact-box input,
-  .contact-box textarea {
-    width: 100%;
-    background: #222;
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 0.75rem;
-    color: #eee;
-    font-family: 'Fira Sans', sans-serif;
-    margin-bottom: 1.5rem;
-  }
-  .contact-box button {
-    background: #3399ff;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  .contact-box button:hover {
-    background: #ff3366;
-  }
+    /* Skills with icons */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
 
-  #thankyou {
-    text-align: center;
-    margin-top: 1.5rem;
-    color: #44ff99;
-    font-weight: bold;
-    display: none;
-  }
+    .skills-grid i {
+      transition: transform 0.3s;
+      color: #ff3366;
+    }
 
-  footer {
-    text-align: center;
-    color: #666;
-    font-size: 0.9rem;
-    margin-top: 5rem;
-  }
-</style>
+    .skills-grid i:hover {
+      transform: scale(1.3);
+      color: #3399ff;
+    }
+
+    /* Projects */
+    .project {
+      margin-bottom: 2rem;
+    }
+    .project h3 {
+      margin: 0.2rem 0;
+    }
+    .project a {
+      color: #ff3366;
+    }
+
+    /* Timeline */
+    .timeline {
+      border-left: 3px solid #ff3366;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      background: linear-gradient(#ff3366, #3399ff);
+      border-radius: 10px;
+    }
+
+    .job {
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .job::before {
+      content: '⬤';
+      position: absolute;
+      left: -2rem;
+      color: #3399ff;
+      font-size: 1.2rem;
+    }
+
+    .job h3 {
+      margin-bottom: 0.3rem;
+      color: #ff3366;
+    }
+
+    /* Contact */
+    .contact-form {
+      background: #111;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #222;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-top: 1rem;
+      color: #ccc;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: #222;
+      border: 1px solid #444;
+      color: #eee;
+      border-radius: 10px;
+      margin-top: 0.5rem;
+    }
+
+    .contact-form button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      border: none;
+      background: #ff3366;
+      color: white;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #3399ff;
+    }
+
+    #thankyou {
+      margin-top: 1rem;
+      color: #44ff88;
+      font-weight: bold;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 5rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
 
-<main>
   <header>
-    <h1>Shashank Yelagandula</h1>
-    <p class="intro">
-      I'm Shashank Yelagandula, an aspiring Data Analyst.<br />
-      A Recent Graduate, Eagerly seeking early career opportunities to make an impact.
-    </p>
-    <blockquote>
-      "The future belongs to those who believe in the power of their code and the beauty of their dreams."
-    </blockquote>
-    <nav class="contact-links">
-      <a href="mailto:shashankx1569@gmail.com">Email</a>
-      <a href="tel:+15712932463">Call</a>
-      <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank">LinkedIn</a>
-      <a href="https://github.com/shashankyelagandula" target="_blank">GitHub</a>
-    </nav>
+    <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
+    <h1>Hi, I’m Shashank Yelagandula</h1>
+    <p>Aspiring Data Analyst | SQL • Python • Power BI • Tableau</p>
   </header>
 
   <section>
-    <h2>Education</h2>
-    <div class="edu-item">
-      <p><strong><a href="https://www.gmu.edu" target="_blank">George Mason University</a></strong> — Master’s in Data Analytics Engineering (2023 - 2024)</p>
-    </div>
-    <div class="edu-item">
-      <p><strong><a href="https://iare.ac.in" target="_blank">Institute of Aeronautical Engineering</a></strong> — Bachelor’s in Electronics & Communication Engineering (2017 - 2021)</p>
-    </div>
+    <h2>About Me</h2>
+    <p class="about">
+      I'm a curious and results-driven analyst who transforms raw data into insights and solutions. With a Master’s in Data Analytics Engineering and hands-on experience with SQL, Python, and BI tools, I thrive at the intersection of tech and impact.
+    </p>
   </section>
 
   <section>
     <h2>Projects</h2>
-    <article>
-      <h3><a href="https://github.com/shashankyelagandula/llm-kg-extraction" target="_blank">LLM for Knowledge Graph Extraction</a></h3>
-      <p>Built ML pipelines in Amazon SageMaker transforming unstructured data to knowledge graphs with 75% accuracy. Deployed with Neo4j improving insights 40%.</p>
-    </article>
-    <article>
-      <h3><a href="https://github.com/shashankyelagandula/heart-health" target="_blank">Cardiovascular Health Analytics</a></h3>
-      <p>Created predictive models (74% accuracy) for early detection of cardiovascular health risks using gradient boosting.</p>
-    </article>
-    <p style="margin-top: 1.5rem;">
-      🔍 Explore more at my GitHub: <a href="https://github.com/shashankyelagandula" target="_blank">github.com/shashankyelagandula</a>
+
+    <div class="project">
+      <h3><a href="https://github.com/shashankyelagandula/llm-kg-extraction" target="_blank">🧠 LLM for Knowledge Graph Extraction</a></h3>
+      <p>Built ML pipeline in Amazon SageMaker converting unstructured data to graph database (Neo4j) with 75% accuracy.</p>
+    </div>
+
+    <div class="project">
+      <h3><a href="https://github.com/shashankyelagandula/heart-health" target="_blank">❤️ Cardiovascular Health Risk Analysis</a></h3>
+      <p>Trained gradient boosting model (74% accuracy) to predict risk using clinical data patterns.</p>
+    </div>
+
+    <p style="margin-top: 1rem;">
+      🧰 More projects on GitHub: <a href="https://github.com/shashankyelagandula" target="_blank">github.com/shashankyelagandula</a>
     </p>
   </section>
 
   <section>
-    <h2>Skills & Tools</h2>
-    <div class="skills-container">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">SQL</span>
-      <span class="skill-tag">Tableau</span>
-      <span class="skill-tag">Power BI</span>
-      <span class="skill-tag">Azure</span>
-      <span class="skill-tag">AWS</span>
-      <span class="skill-tag">Databricks</span>
-      <span class="skill-tag">ETL</span>
-      <span class="skill-tag">Airflow</span>
-      <span class="skill-tag">Docker</span>
-      <span class="skill-tag">Data Governance</span>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <i class="fab fa-python" title="Python"></i>
+      <i class="fas fa-database" title="SQL"></i>
+      <i class="fas fa-chart-line" title="Power BI"></i>
+      <i class="fas fa-table" title="Tableau"></i>
+      <i class="fab fa-aws" title="AWS"></i>
+      <i class="fab fa-docker" title="Docker"></i>
+      <i class="fas fa-cloud" title="Azure"></i>
+      <i class="fas fa-project-diagram" title="ETL & Pipelines"></i>
     </div>
   </section>
 
   <section>
-    <h2>Send Me a Message</h2>
-    <div class="contact-box">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="job">
+        <h3>MERCK — Data Analyst (2025–Present)</h3>
+        <p>Optimized SQL workflows, built Tableau dashboards, and analyzed 100K+ pharma records.</p>
+      </div>
+      <div class="job">
+        <h3>TCS — Data Analyst / System Engineer (2021–2023)</h3>
+        <p>Created ETL pipelines in Azure, automated dashboards with Python/VBA, saved 30+ hrs/month.</p>
+      </div>
+      <div class="job">
+        <h3>Trigent — Data Analyst Intern (2020–2021)</h3>
+        <p>Reduced SQL extraction time by 20%, engineered reusable Excel templates, ran A/B tests.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <p><strong><a href="https://www.gmu.edu" target="_blank">George Mason University</a></strong> — MS in Data Analytics Engineering (2023–2024)</p>
+    <p><strong><a href="https://www.iare.ac.in" target="_blank">Institute of Aeronautical Engineering</a></strong> — B.Tech in ECE (2017–2021)</p>
+  </section>
+
+  <section>
+    <h2>Send Me a Message ✉️</h2>
+    <div class="contact-form">
       <form id="contact-form">
-        <label for="name">Your Name</label>
+        <label for="name">Name</label>
         <input type="text" id="name" required />
-
-        <label for="email">Your Email</label>
+        <label for="email">Email</label>
         <input type="email" id="email" required />
-
-        <label for="message">Your Message</label>
+        <label for="message">Message</label>
         <textarea id="message" rows="5" required></textarea>
-
-        <button type="submit">🚀 Send Message</button>
+        <button type="submit">Send 🚀</button>
       </form>
-      <p id="thankyou">Thanks! Your message has been received 🎉</p>
+      <p id="thankyou">Thank you! I’ll get back to you soon. 🙌</p>
     </div>
   </section>
 
   <footer>
     &copy; <span id="year"></span> Shashank Yelagandula — All rights reserved.
   </footer>
-</main>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  const form = document.getElementById('contact-form');
-  const thankyou = document.getElementById('thankyou');
+    const form = document.getElementById('contact-form');
+    const thankyou = document.getElementById('thankyou');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    form.style.display = 'none';
-    thankyou.style.display = 'block';
-  });
-</script>
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      thankyou.style.display = 'block';
+    });
+  </script>
 
 </body>
 </html>
