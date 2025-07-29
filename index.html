@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shashank Yelagandula - Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+  
+  :root {
+    --bg-light: #f0e9e1;
+    --text-light: #2d2d2d;
+    --accent-light: #ff5f5f;
+    --accent2-light: #ffb347;
+    --card-bg-light: #fff8f0;
+    --input-bg-light: #fff;
+    --border-light: #d1c7b7;
+    
+    --bg-dark: #1a1a2e;
+    --text-dark: #eaeaea;
+    --accent-dark: #ff6f91;
+    --accent2-dark: #f9bc60;
+    --card-bg-dark: #222240;
+    --input-bg-dark: #333366;
+    --border-dark: #444466;
+  }
+  
+  /* Theme detection */
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Courier Prime', monospace;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.5s, color 0.5s;
+    user-select: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+  }
+  
+  a {
+    color: var(--accent-light);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    a {
+      color: var(--accent-dark);
+    }
+  }
+  a:hover {
+    color: var(--accent2-light);
+  }
+  @media (prefers-color-scheme: dark) {
+    a:hover {
+      color: var(--accent2-dark);
+    }
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 2px solid var(--border-light);
+  }
+  @media (prefers-color-scheme: dark) {
+    .container {
+      background-color: var(--card-bg-dark);
+      border: 2px solid var(--border-dark);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    }
+  }
+  
+  h1, h2, h3 {
+    margin-top: 0;
+    letter-spacing: 1.2px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+    color: var(--accent-light);
+    text-shadow: 1px 1px 2px var(--accent2-light);
+  }
+  @media (prefers-color-scheme: dark) {
+    h1 {
+      color: var(--accent-dark);
+      text-shadow: 1px 1px 2px var(--accent2-dark);
+    }
+  }
+  h2 {
+    color: var(--accent2-light);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent2-light);
+    padding-bottom: 0.2rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    h2 {
+      color: var(--accent2-dark);
+      border-bottom: 2px solid var(--accent2-dark);
+    }
+  }
+  
+  p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-links a {
+    margin-right: 1.2rem;
+  }
+  
+  .skill-tag {
+    display: inline-block;
+    background-color: var(--accent2-light);
+    color: var(--bg-light);
+    padding: 0.3rem 0.6rem;
+    margin: 0.1rem 0.3rem 0.3rem 0;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  @media (prefers-color-scheme: dark) {
+    .skill-tag {
+      background-color: var(--accent2-dark);
+      color: var(--bg-dark);
+    }
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+  }
+  
+  input, textarea {
+    background-color: var(--input-bg-light);
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    padding: 0.8rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-light);
+    transition: border-color 0.3s;
+    resize: vertical;
+  }
+  @media (prefers-color-scheme: dark) {
+    input, textarea {
+      background-color: var(--input-bg-dark);
+      border: 2px solid var(--border-dark);
+      color: var(--text-dark);
+    }
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-light);
+    box-shadow: 0 0 8px var(--accent-light);
+  }
+  @media (prefers-color-scheme: dark) {
+    input:focus, textarea:focus {
+      border-color: var(--accent-dark);
+      box-shadow: 0 0 8px var(--accent-dark);
+    }
+  }
+  
+  button {
+    background-color: var(--accent-light);
+    color: var(--bg-light);
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+  button:hover {
+    background-color: var(--accent2-light);
+  }
+  @media (prefers-color-scheme: dark) {
+    button {
+      background-color: var(--accent-dark);
+      color: var(--bg-dark);
+    }
+    button:hover {
+      background-color: var(--accent2-dark);
+    }
+  }
+  
+  footer {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 3rem;
+    color: var(--border-light);
+  }
+  @media (prefers-color-scheme: dark) {
+    footer {
+      color: var(--border-dark);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <h1>Shashank Yelagandula</h1>
+      <p><em>Data Analyst | SQL, Python, Tableau, Power BI | ETL & Big Data</em></p>
+      <nav class="contact-links" aria-label="Contact Links">
+        <a href="mailto:shashankx1569@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+        <a href="tel:+15712932463" target="_blank" rel="noopener noreferrer">Call</a>
+        <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Summary</h2>
+      <p>Hi, I’m Shashank Yelagandula — a results-driven Data Analyst with 3+ years of experience uncovering insights from complex datasets to drive business outcomes. I specialize in translating large datasets into strategic insights using SQL, Python, Tableau & Power BI, and automating workflows cutting processing time by 25–40%.</p>
+    </section>
+
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+
+      <article aria-label="MERCK">
+        <h3>Data Analyst — MERCK (Mar 2025 - Present)</h3>
+        <ul>
+          <li>Derived actionable insights from healthcare datasets (100,000+ records) supporting pharmaceutical R&D.</li>
+          <li>Optimized SQL queries improving reporting workflows by 30%.</li>
+          <li>Built dashboards in Excel & Tableau enabling data-driven community programs.</li>
+        </ul>
+      </article>
+
+      <article aria-label="Tata Consultancy Services">
+        <h3>System Engineer / Data Analyst — TCS (Jun 2021 - Jan 2023)</h3>
+        <ul>
+          <li>Redesigned 15+ Tableau dashboards reducing report time by 8-10 hrs/week.</li>
+          <li>Optimized SQL for 5+ TB data, improving retrieval by 40%.</li>
+          <li>Built 20+ ETL pipelines on Azure, saving 30+ hrs/month manual work.</li>
+          <li>Automated Excel dashboards with Power Query, VBA, Python email alerts.</li>
+        </ul>
+      </article>
+
+      <article aria-label="Trigent Software">
+        <h3>Data Analyst Intern — Trigent Software (Aug 2020 - May 2021)</h3>
+        <ul>
+          <li>Streamlined SQL, reducing extraction time by 20%.</li>
+          <li>Engineered Excel templates, cutting manual effort by 180+ hours/year.</li>
+          <li>Conducted A/B testing to improve product conversion rates.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills & Tools</h2>
+      <div>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">Databricks</span>
+        <span class="skill-tag">Airflow</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">ETL Pipelines</span>
+        <span class="skill-tag">Predictive Analytics</span>
+        <span class="skill-tag">Data Governance</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <p><strong>Master’s in Data Analytics Engineering</strong>, George Mason University (2023 - 2024)</p>
+      <p><strong>Bachelor’s in Electronics and Communication Engineering</strong>, Institute of Aeronautical Engineering (2017 - 2021)</p>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <article>
+        <h3>Large Language Model for Knowledge Graph Extraction</h3>
+        <p>Built ML pipelines in Amazon SageMaker transforming unstructured data to knowledge graphs with 75% extraction accuracy; deployed on Neo4j, boosting efficiency 40%.</p>
+      </article>
+      <article>
+        <h3>Cardiovascular Health Patterns Analytics</h3>
+        <p>Developed gradient boosting predictive models with 74% accuracy to identify critical health indicators for cardiovascular disease prevention.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Send Me a Message</h2>
+      <form id="contact-form" aria-label="Contact form">
+        <input type="text" id="name" placeholder="Your Name" aria-label="Name" required />
+        <input type="email" id="email" placeholder="Your Email" aria-label="Email" required />
+        <textarea id="message" placeholder="Your Message" aria-label="Message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="thankyou" style="font-weight:600; color:#ff5f5f; display:none; margin-top:1rem;">
+        Thanks for your message! I'll get back to you soon.
+      </p>
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> Shashank Yelagandula. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple form handling (no backend)
+    const form = document.getElementById('contact-form');
+    const thankyou = document.getElementById('thankyou');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Basic validation
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Show thank you message & reset form
+      form.style.display = 'none';
+      thankyou.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
