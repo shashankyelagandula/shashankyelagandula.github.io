@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shashank Yelagandula | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Navbar */
+  nav {
+    position: fixed;
+    width: 100%;
+    background: #2c3e50;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  nav .container {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  nav .logo {
+    color: #ecf0f1;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    color: #ecf0f1;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.25rem 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  nav ul li a:hover {
+    background-color: #4a90e2;
+    border-radius: 4px;
+  }
+
+  /* Main container */
+  .container {
+    max-width: 900px;
+    margin: 100px auto 60px;
+    padding: 0 1rem;
+  }
+
+  /* Section cards */
+  section {
+    background: #fff;
+    margin-bottom: 2.5rem;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.05);
+  }
+
+  h1, h2, h3 {
+    color: #2c3e50;
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.3rem;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #4a90e2;
+    padding-bottom: 0.3rem;
+  }
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  ul {
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Contact links */
+  .contact-links a {
+    margin-right: 1.5rem;
+    font-weight: 600;
+    color: #4a90e2;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+    padding: 2rem 1rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav .container {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Shashank Yelagandula</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <section id="home" aria-label="Home introduction">
+    <h1>👋 Hi, I'm Shashank Yelagandula</h1>
+    <p><strong>Data Analyst</strong> | SQL, Python, Tableau, Power BI | ETL & Big Data | Predictive Analytics</p>
+    <p>Results-driven analyst with 3+ years uncovering insights to drive strategic decisions in healthcare, finance & R&D.</p>
+  </section>
+
+  <section id="about" aria-label="About Me">
+    <h2>About Me</h2>
+    <p>
+      I specialize in transforming raw data into powerful narratives with a Master's degree in Data Analytics Engineering from George Mason University, and hands-on experience at Merck, TCS, and Trigent.
+    </p>
+    <ul>
+      <li>Processed 1M+ rows of data into clear, actionable insights</li>
+      <li>Built ETL pipelines using Azure, AWS, Databricks, Spark & Kafka</li>
+      <li>Automated workflows, reducing data processing time by up to 40%</li>
+      <li>Skilled in predictive modeling, A/B testing, and data governance</li>
+    </ul>
+  </section>
+
+  <section id="skills" aria-label="Technical Skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Languages & Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel (VBA, Power Query), Looker, Qlik, Google Data Studio</li>
+      <li><strong>Cloud & Big Data:</strong> Azure, AWS, GCP, Databricks, Spark, Kafka, Snowflake, Redshift, BigQuery</li>
+      <li><strong>Databases:</strong> MySQL, PostgreSQL, Oracle, MongoDB, Cassandra, Hive</li>
+      <li><strong>Workflow & ETL:</strong> Apache Airflow, dbt, NiFi, Talend, Informatica, Alteryx, Matillion, SSIS</li>
+      <li><strong>Others:</strong> Docker, REST APIs, Git, Salesforce, SAP, ServiceNow</li>
+    </ul>
+  </section>
+
+  <section id="experience" aria-label="Experience">
+    <h2>Experience</h2>
+
+    <h3>Merck — Data Analyst</h3>
+    <p><em>Mar 2025 – Present | United States</em></p>
+    <ul>
+      <li>Analyzed EHRs, claims & clinical trial data to improve R&D by 30%</li>
+      <li>Built SQL-driven reporting systems to streamline decision-making</li>
+      <li>Designed dashboards in Tableau & Excel to support community programs</li>
+    </ul>
+
+    <h3>Tata Consultancy Services — System Engineer / Data Analyst</h3>
+    <p><em>Jun 2021 – Jan 2023 | India</em></p>
+    <ul>
+      <li>Rebuilt 15+ Tableau dashboards used by 200+ stakeholders</li>
+      <li>Developed 20+ ETL pipelines in Azure, saving 30+ hours/month</li>
+      <li>Automated Excel reports using Python, VBA, and Power Query</li>
+    </ul>
+
+    <h3>Trigent Software — Data Analyst Intern</h3>
+    <p><em>Aug 2020 – May 2021 | India</em></p>
+    <ul>
+      <li>Streamlined SQL logic and automated Excel templates to save 180+ hours/year</li>
+      <li>Conducted A/B testing for feature optimization</li>
+    </ul>
+  </section>
+
+  <section id="projects" aria-label="Projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <strong>Knowledge Graph Extraction with LLMs:</strong> Built a knowledge graph system using Amazon SageMaker & Neo4j, achieving 75% extraction accuracy and 40% efficiency gain. <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">View on GitHub</a>
+      </li>
+      <li>
+        <strong>Cardiovascular Health Analytics:</strong> Developed predictive models (74% accuracy, 81% AUC) to identify key indicators for heart disease. <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">View on GitHub</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" aria-label="Contact Information">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:shashankx1569@gmail.com">shashankx1569@gmail.com</a> | 📞 (571) 293-2463</p>
+    <p>
+      🔗 <a href="https://www.linkedin.com/in/shashankyelagandula-7a3b391b0" target="_blank" rel="noopener">LinkedIn</a> | 🐙 <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">GitHub</a>
+    </p>
+    <p>
+      Feel free to reach out for collaborations, freelance gigs, or full-time roles. Let's build something meaningful! 🚀
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 Shashank Yelagandula
+</footer>
+
+</body>
+</html>
