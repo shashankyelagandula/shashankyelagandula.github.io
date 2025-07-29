@@ -1,138 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shashank Yelagandula | Data Analyst Portfolio</title>
-  <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      background: #f0f4f8;
-      color: #222;
-      line-height: 1.6;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem 1rem;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #004f99;
-      text-decoration: underline;
-    }
-    h1, h2 {
-      color: #111;
-      margin-bottom: 0.25rem;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shashank Yelagandula | Portfolio</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #f9f9f9;
+  }
+  a {
+    color: #007acc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 2rem;
+  }
+  nav ul li {
+    font-weight: 600;
+  }
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 6rem auto 3rem;
+    padding: 0 1rem;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 4rem;
+  }
+  h1, h2, h3 {
+    color: #111;
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid #007acc;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  ul {
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Buttons and links */
+  .btn {
+    background: #007acc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .btn:hover {
+    background: #005f99;
+  }
+
+  /* Contact links */
+  .contact-links a {
+    margin-right: 1.5rem;
+    font-weight: 600;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 2rem 1rem 3rem;
+  }
+
+  /* Responsive */
+  @media(max-width:600px) {
+    nav ul {
+      gap: 1rem;
+      padding: 0.8rem 1rem;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
-    h2 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 0.3rem;
-      margin-top: 2rem;
-    }
-    p, ul {
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-    ul {
-      padding-left: 1.25rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    .contact-links a {
-      margin-right: 1rem;
-      font-weight: 600;
-    }
-    .highlight {
-      color: #007acc;
-      font-weight: 600;
-    }
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 1px solid #ddd;
-      padding-top: 1rem;
-    }
-    .emoji {
-      font-size: 1.3rem;
-      margin-right: 0.25rem;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
+
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <section id="home">
     <h1>👋 Hi, I'm Shashank Yelagandula</h1>
-    <p class="highlight">Data Analyst | SQL, Python, Tableau, Power BI | ETL & Big Data | Predictive Analytics</p>
-    <p class="contact-links">
-      📧 <a href="mailto:shashankx1569@gmail.com">shashankx1569@gmail.com</a> • 
-      📞 (571) 293-2463 • 
-      🔗 <a href="https://www.linkedin.com/in/shashankyelagandula-7a3b391b0" target="_blank" rel="noopener">LinkedIn</a> • 
-      🐙 <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </header>
+    <p><strong>Data Analyst</strong> | SQL, Python, Tableau, Power BI | ETL & Big Data | Predictive Analytics</p>
+    <p>Results-driven analyst with 3+ years uncovering insights to drive strategic decisions in healthcare, finance & R&D.</p>
+  </section>
 
-  <section>
-    <h2>🚀 About Me</h2>
+  <section id="about">
+    <h2>About Me</h2>
     <p>
-      I'm a results-driven <strong>Data Analyst</strong> with 3+ years of experience uncovering insights from complex datasets to drive strategic decisions in healthcare, finance, and R&D. With a Master's degree in Data Analytics Engineering from <strong>George Mason University</strong> and hands-on experience at <strong>Merck, TCS</strong>, and <strong>Trigent</strong>, I specialize in transforming raw data into powerful narratives.
+      I specialize in transforming raw data into powerful narratives with a Master's degree in Data Analytics Engineering from George Mason University, and hands-on experience at Merck, TCS, and Trigent.
     </p>
     <ul>
-      <li>📊 Turn 1M+ rows of raw data into clear, actionable insights</li>
-      <li>⚙️ Build ETL pipelines using Azure, AWS, Databricks, Spark, Kafka</li>
-      <li>⏱️ Automate workflows to cut data processing time by up to 40%</li>
-      <li>🌍 Skilled in predictive modeling, A/B testing, and data governance</li>
+      <li>Processed 1M+ rows of data into clear, actionable insights</li>
+      <li>Built ETL pipelines using Azure, AWS, Databricks, Spark & Kafka</li>
+      <li>Automated workflows, reducing data processing time by up to 40%</li>
+      <li>Skilled in predictive modeling, A/B testing, and data governance</li>
     </ul>
   </section>
 
-  <section>
-    <h2>🚀 What I’m Exploring Right Now</h2>
+  <section id="skills">
+    <h2>Technical Skills</h2>
     <ul>
-      <li>🕸 Graph algorithms &amp; GNNs for supply‑chain forensics</li>
-      <li>🔎 RAG pipelines (FAISS + OpenAI) for domain‑aware retrieval</li>
-      <li>☁️ Productionising LLM apps with FastAPI, Docker &amp; AWS</li>
+      <li><strong>Languages & Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel (VBA, Power Query), Looker, Qlik, Google Data Studio</li>
+      <li><strong>Cloud & Big Data:</strong> Azure, AWS, GCP, Databricks, Spark, Kafka, Snowflake, Redshift, BigQuery</li>
+      <li><strong>Databases:</strong> MySQL, PostgreSQL, Oracle, MongoDB, Cassandra, Hive</li>
+      <li><strong>Workflow & ETL:</strong> Apache Airflow, dbt, NiFi, Talend, Informatica, Alteryx, Matillion, SSIS</li>
+      <li><strong>Others:</strong> Docker, REST APIs, Git, Salesforce, SAP, ServiceNow</li>
     </ul>
   </section>
 
-  <section>
-    <h2>🛠️ Technical Skills</h2>
-    <p><strong>Languages &amp; Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel (VBA, Power Query), Looker, Qlik, Google Data Studio</p>
-    <p><strong>Cloud &amp; Big Data:</strong> Azure, AWS, GCP, Databricks, Spark, Kafka, Snowflake, Redshift, BigQuery</p>
-    <p><strong>Databases:</strong> MySQL, PostgreSQL, Oracle, MongoDB, Cassandra, Hive</p>
-    <p><strong>Workflow &amp; ETL:</strong> Apache Airflow, dbt, NiFi, Talend, Informatica, Alteryx, Matillion, SSIS</p>
-    <p><strong>Other Tools:</strong> Docker, REST APIs, Git, Salesforce, SAP, ServiceNow</p>
-  </section>
-
-  <section>
-    <h2>📈 Experience Highlights</h2>
+  <section id="experience">
+    <h2>Experience</h2>
 
     <h3>Merck — Data Analyst</h3>
     <p><em>Mar 2025 – Present | United States</em></p>
     <ul>
-      <li>Analyzed EHRs, claims, and clinical trial data to improve R&D by 30%</li>
+      <li>Analyzed EHRs, claims & clinical trial data to improve R&D by 30%</li>
       <li>Built SQL-driven reporting systems to streamline decision-making</li>
-      <li>Designed dashboards in Tableau &amp; Excel to support community programs</li>
+      <li>Designed dashboards in Tableau & Excel to support community programs</li>
     </ul>
 
     <h3>Tata Consultancy Services — System Engineer / Data Analyst</h3>
     <p><em>Jun 2021 – Jan 2023 | India</em></p>
     <ul>
       <li>Rebuilt 15+ Tableau dashboards used by 200+ stakeholders</li>
-      <li>Developed 20+ ETL pipelines in Azure, reducing manual work by 30+ hours/month</li>
-      <li>Automated Excel reports with Python, VBA, and Power Query</li>
+      <li>Developed 20+ ETL pipelines in Azure, saving 30+ hours/month</li>
+      <li>Automated Excel reports using Python, VBA, and Power Query</li>
     </ul>
 
     <h3>Trigent Software — Data Analyst Intern</h3>
@@ -143,230 +201,34 @@
     </ul>
   </section>
 
-  <section>
-    <h2>🎓 Education</h2>
-    <p><strong>George Mason University</strong><br />M.S. in Data Analytics Engineering (2023 – 2024)</p>
-    <p><strong>Institute of Aeronautical Engineering</strong><br />B.Tech in Electronics &amp; Communication Engineering (2017 – 2021)</p>
-  </section>
-
-  <section>
-    <h2>🧩 Featured Projects</h2>
+  <section id="projects">
+    <h2>Projects</h2>
     <ul>
       <li>
-        🔗 <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">Knowledge Graph Extraction with LLMs</a> — Built a knowledge graph system using Amazon SageMaker & Neo4j, achieving 75% extraction accuracy and 40% efficiency gain.
+        <strong>Knowledge Graph Extraction with LLMs:</strong> Built a knowledge graph system using Amazon SageMaker & Neo4j, achieving 75% extraction accuracy and 40% efficiency gain. <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">View on GitHub</a>
       </li>
       <li>
-        ❤️ <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">Cardiovascular Health Analytics</a> — Developed predictive models (74% accuracy, 81% AUC) to identify key indicators for heart disease.
+        <strong>Cardiovascular Health Analytics:</strong> Developed predictive models (74% accuracy, 81% AUC) to identify key indicators for heart disease. <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">View on GitHub</a>
       </li>
     </ul>
   </section>
 
-  <section>
-    <h2>🌍 Languages</h2>
-    <ul>
-      <li>English (Professional)</li>
-      <li>Telugu (Native)</li>
-      <li>Hindi (Native)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🤝 Let’s Connect</h2>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:shashankx1569@gmail.com">shashankx1569@gmail.com</a> | 📞 (571) 293-2463</p>
     <p>
-      If you’ve got a complex dataset that needs taming, a product idea that needs insights, or a wild hypothesis you want to test —<br />
-      <strong>shoot me a message and let’s build something meaningful.</strong> 🚀<br />
-      I'm always open to collaborations, freelance gigs, full-time roles, or just geeking out over cool data projects!
+      🔗 <a href="https://www.linkedin.com/in/shashankyelagandula-7a3b391b0" target="_blank" rel="noopener">LinkedIn</a> | 🐙 <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">GitHub</a>
     </p>
-  </section>
-
-  <footer>
-    &copy; 2025 Shashank Yelagandula &mdash; <a href="mailto:shashankx1569@gmail.com">Contact Me</a>
-  </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shashank Yelagandula | Data Analyst Portfolio</title>
-  <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      background: #f0f4f8;
-      color: #222;
-      line-height: 1.6;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem 1rem;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #004f99;
-      text-decoration: underline;
-    }
-    h1, h2 {
-      color: #111;
-      margin-bottom: 0.25rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-    }
-    h2 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 0.3rem;
-      margin-top: 2rem;
-    }
-    p, ul {
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-    ul {
-      padding-left: 1.25rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    .contact-links a {
-      margin-right: 1rem;
-      font-weight: 600;
-    }
-    .highlight {
-      color: #007acc;
-      font-weight: 600;
-    }
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 1px solid #ddd;
-      padding-top: 1rem;
-    }
-    .emoji {
-      font-size: 1.3rem;
-      margin-right: 0.25rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>👋 Hi, I'm Shashank Yelagandula</h1>
-    <p class="highlight">Data Analyst | SQL, Python, Tableau, Power BI | ETL & Big Data | Predictive Analytics</p>
-    <p class="contact-links">
-      📧 <a href="mailto:shashankx1569@gmail.com">shashankx1569@gmail.com</a> • 
-      📞 (571) 293-2463 • 
-      🔗 <a href="https://www.linkedin.com/in/shashankyelagandula-7a3b391b0" target="_blank" rel="noopener">LinkedIn</a> • 
-      🐙 <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </header>
-
-  <section>
-    <h2>🚀 About Me</h2>
     <p>
-      I'm a results-driven <strong>Data Analyst</strong> with 3+ years of experience uncovering insights from complex datasets to drive strategic decisions in healthcare, finance, and R&D. With a Master's degree in Data Analytics Engineering from <strong>George Mason University</strong> and hands-on experience at <strong>Merck, TCS</strong>, and <strong>Trigent</strong>, I specialize in transforming raw data into powerful narratives.
-    </p>
-    <ul>
-      <li>📊 Turn 1M+ rows of raw data into clear, actionable insights</li>
-      <li>⚙️ Build ETL pipelines using Azure, AWS, Databricks, Spark, Kafka</li>
-      <li>⏱️ Automate workflows to cut data processing time by up to 40%</li>
-      <li>🌍 Skilled in predictive modeling, A/B testing, and data governance</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🚀 What I’m Exploring Right Now</h2>
-    <ul>
-      <li>🕸 Graph algorithms &amp; GNNs for supply‑chain forensics</li>
-      <li>🔎 RAG pipelines (FAISS + OpenAI) for domain‑aware retrieval</li>
-      <li>☁️ Productionising LLM apps with FastAPI, Docker &amp; AWS</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🛠️ Technical Skills</h2>
-    <p><strong>Languages &amp; Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel (VBA, Power Query), Looker, Qlik, Google Data Studio</p>
-    <p><strong>Cloud &amp; Big Data:</strong> Azure, AWS, GCP, Databricks, Spark, Kafka, Snowflake, Redshift, BigQuery</p>
-    <p><strong>Databases:</strong> MySQL, PostgreSQL, Oracle, MongoDB, Cassandra, Hive</p>
-    <p><strong>Workflow &amp; ETL:</strong> Apache Airflow, dbt, NiFi, Talend, Informatica, Alteryx, Matillion, SSIS</p>
-    <p><strong>Other Tools:</strong> Docker, REST APIs, Git, Salesforce, SAP, ServiceNow</p>
-  </section>
-
-  <section>
-    <h2>📈 Experience Highlights</h2>
-
-    <h3>Merck — Data Analyst</h3>
-    <p><em>Mar 2025 – Present | United States</em></p>
-    <ul>
-      <li>Analyzed EHRs, claims, and clinical trial data to improve R&D by 30%</li>
-      <li>Built SQL-driven reporting systems to streamline decision-making</li>
-      <li>Designed dashboards in Tableau &amp; Excel to support community programs</li>
-    </ul>
-
-    <h3>Tata Consultancy Services — System Engineer / Data Analyst</h3>
-    <p><em>Jun 2021 – Jan 2023 | India</em></p>
-    <ul>
-      <li>Rebuilt 15+ Tableau dashboards used by 200+ stakeholders</li>
-      <li>Developed 20+ ETL pipelines in Azure, reducing manual work by 30+ hours/month</li>
-      <li>Automated Excel reports with Python, VBA, and Power Query</li>
-    </ul>
-
-    <h3>Trigent Software — Data Analyst Intern</h3>
-    <p><em>Aug 2020 – May 2021 | India</em></p>
-    <ul>
-      <li>Streamlined SQL logic and automated Excel templates to save 180+ hours/year</li>
-      <li>Conducted A/B testing for feature optimization</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🎓 Education</h2>
-    <p><strong>George Mason University</strong><br />M.S. in Data Analytics Engineering (2023 – 2024)</p>
-    <p><strong>Institute of Aeronautical Engineering</strong><br />B.Tech in Electronics &amp; Communication Engineering (2017 – 2021)</p>
-  </section>
-
-  <section>
-    <h2>🧩 Featured Projects</h2>
-    <ul>
-      <li>
-        🔗 <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">Knowledge Graph Extraction with LLMs</a> — Built a knowledge graph system using Amazon SageMaker & Neo4j, achieving 75% extraction accuracy and 40% efficiency gain.
-      </li>
-      <li>
-        ❤️ <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener">Cardiovascular Health Analytics</a> — Developed predictive models (74% accuracy, 81% AUC) to identify key indicators for heart disease.
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🌍 Languages</h2>
-    <ul>
-      <li>English (Professional)</li>
-      <li>Telugu (Native)</li>
-      <li>Hindi (Native)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🤝 Let’s Connect</h2>
-    <p>
-      If you’ve got a complex dataset that needs taming, a product idea that needs insights, or a wild hypothesis you want to test —<br />
-      <strong>shoot me a message and let’s build something meaningful.</strong> 🚀<br />
-      I'm always open to collaborations, freelance gigs, full-time roles, or just geeking out over cool data projects!
+      Feel free to reach out for collaborations, freelance gigs, or full-time roles. Let's build something meaningful! 🚀
     </p>
   </section>
 
-  <footer>
-    &copy; 2025 Shashank Yelagandula &mdash; <a href="mailto:shashankx1569@gmail.com">Contact Me</a>
-  </footer>
+</div>
+
+<footer>
+  &copy; 2025 Shashank Yelagandula
+</footer>
+
 </body>
 </html>
