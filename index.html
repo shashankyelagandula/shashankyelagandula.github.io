@@ -8,13 +8,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://unpkg.com/scrollreveal"></script>
   <style>
+    :root {
+      --bg-dark: #1d1f21;
+      --bg-light: #f5f5f5;
+      --text-dark: #e0e0e0;
+      --text-light: #222;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: #1d1f21;
-      color: #e0e0e0;
+      background: var(--bg-dark);
+      color: var(--text-dark);
       font-family: 'Fira Sans', sans-serif;
       scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
     }
 
     nav {
@@ -66,6 +74,13 @@
       border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
+      box-shadow: 0 0 8px #44ff88;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .resume-btn:hover,
+    form button:hover {
+      box-shadow: 0 0 16px #44ff88;
     }
 
     section {
@@ -87,11 +102,6 @@
       font-size: 1.05rem;
       line-height: 1.7;
       color: #d0d0d0;
-    }
-
-    .projects a {
-      color: #44ff88;
-      font-weight: bold;
     }
 
     .skills-grid {
@@ -135,7 +145,6 @@
       position: relative;
       padding-left: 2.5rem;
       margin-left: 1rem;
-      border-left: 4px solid transparent;
     }
 
     .timeline-container::before {
@@ -183,12 +192,6 @@
       box-shadow: 0 0 20px #000;
     }
 
-    .contact-connect p {
-      margin-bottom: 1.5rem;
-      color: #d0d0d0;
-      font-size: 1.05rem;
-    }
-
     .contact-links {
       display: flex;
       justify-content: center;
@@ -211,15 +214,11 @@
 
     form {
       max-width: 600px;
-      margin-inline: auto;
+      margin: auto;
       display: flex;
       flex-direction: column;
       gap: 1rem;
       text-align: left;
-    }
-
-    form label {
-      font-weight: bold;
     }
 
     form input, form textarea {
@@ -240,6 +239,7 @@
       border: none;
       cursor: pointer;
       align-self: center;
+      box-shadow: 0 0 8px #44ff88;
     }
 
     footer {
@@ -265,7 +265,6 @@
       border-radius: 50%;
       padding: 12px;
       font-size: 1.2rem;
-      text-align: center;
       box-shadow: 0 0 10px #000;
       transition: transform 0.3s, background 0.3s;
     }
@@ -281,75 +280,57 @@
       top: 10px;
       right: 20px;
       z-index: 999;
-    }
-
-    .toggle-switch input {
-      display: none;
-    }
-
-    .toggle-label {
-      background: #333;
-      border-radius: 50px;
-      width: 50px;
-      height: 26px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 3px;
-      cursor: pointer;
-      box-shadow: 0 0 5px #000;
-    }
-
-    .toggle-ball {
-      background: #fff;
-      border-radius: 50%;
-      height: 20px;
-      width: 20px;
-      transition: transform 0.3s ease;
+      gap: 5px;
+      background: #333;
+      padding: 5px 10px;
+      border-radius: 20px;
+      color: #fff;
+      font-size: 1rem;
     }
 
     body.light-mode {
-      background: #f5f5f5;
-      color: #222;
+      background: var(--bg-light);
+      color: var(--text-light);
     }
 
     body.light-mode nav {
       background: linear-gradient(to right, #f0f0f0, #ddd);
     }
 
-    body.light-mode .toggle-ball {
-      transform: translateX(24px);
+    body.light-mode .resume-btn,
+    body.light-mode form button {
+      box-shadow: 0 0 8px #0b0;
     }
 
-    body.light-mode h2,
     body.light-mode .skill-label,
     body.light-mode .timeline-block p,
     body.light-mode .about p,
-    body.light-mode .contact-connect p,
-    body.light-mode .contact-links a {
+    body.light-mode .contact-connect,
+    body.light-mode .contact-links a,
+    body.light-mode form input,
+    body.light-mode form textarea {
       color: #111 !important;
-    }
-
-    body.light-mode .contact-connect {
-      background: #eee;
-      box-shadow: 0 0 10px #aaa;
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
 
+<!-- Toggle Switch -->
 <div class="toggle-switch">
-  <label class="toggle-label">
-    <input type="checkbox" id="themeToggle">
-    <span class="toggle-ball"></span>
-  </label>
+  <span id="toggle-icon">🌙</span>
+  <input type="checkbox" id="themeToggle" />
 </div>
 
+<!-- Floating Buttons -->
 <div class="floating-buttons">
-  <a href="https://github.com/shashankyelagandula" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-  <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://github.com/shashankyelagandula" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank"><i class="fab fa-linkedin-in"></i></a>
 </div>
 
+<!-- Navigation -->
 <nav>
   <a href="#home">Home</a>
   <a href="#about">About</a>
@@ -358,12 +339,14 @@
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- Header -->
 <header id="home">
   <h1>Hi, I’m Shashank Yelagandula</h1>
   <p>Aspiring Data Analyst</p>
   <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
 </header>
 
+<!-- About Section -->
 <section id="about">
   <h2>About Me</h2>
   <div class="about">
@@ -373,6 +356,7 @@
   </div>
 </section>
 
+<!-- Skills -->
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills-grid">
@@ -388,6 +372,7 @@
   </div>
 </section>
 
+<!-- Experience -->
 <section id="experience">
   <h2>Experience</h2>
   <div class="timeline-container">
@@ -406,6 +391,7 @@
   </div>
 </section>
 
+<!-- Contact -->
 <section id="contact">
   <h2>Connect with Me</h2>
   <div class="contact-connect">
@@ -418,11 +404,11 @@
     </div>
 
     <form action="https://formspree.io/f/mnqknzda" method="POST" id="contact-form">
-      <label for="name">Name</label>
+      <label>Name</label>
       <input type="text" name="name" required />
-      <label for="email">Email</label>
+      <label>Email</label>
       <input type="email" name="_replyto" required />
-      <label for="message">Message</label>
+      <label>Message</label>
       <textarea name="message" rows="5" required></textarea>
       <button type="submit">Send Message 🚀</button>
     </form>
@@ -453,8 +439,11 @@
     interval: 100
   });
 
-  document.getElementById('themeToggle').addEventListener('change', () => {
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('toggle-icon');
+  toggle.addEventListener('change', () => {
     document.body.classList.toggle('light-mode');
+    icon.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
   });
 </script>
 
