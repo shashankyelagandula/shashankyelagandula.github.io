@@ -1,3 +1,4 @@
+<!-- STARTS HERE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,27 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    :root {
-      --bg-color: #1d1f21;
-      --text-color: #e0e0e0;
-      --accent-color: #44ff88;
-      --header-color: #ff3366;
-    }
     body {
       margin: 0;
       padding: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: #1d1f21;
+      color: #e0e0e0;
       font-family: 'Fira Sans', sans-serif;
       scroll-behavior: smooth;
-      transition: background 0.3s, color 0.3s;
     }
-    .light-mode {
-      --bg-color: #ffffff;
-      --text-color: #111;
-      --accent-color: #0066ff;
-      --header-color: #cc0000;
-    }
+
     nav {
       position: sticky;
       top: 0;
@@ -37,6 +26,7 @@
       z-index: 1000;
       border-bottom: 1px solid #444;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
@@ -45,123 +35,317 @@
       font-weight: 600;
       transition: color 0.3s;
     }
+
     nav a:hover {
-      color: var(--accent-color);
+      color: #44ff88;
     }
+
     header {
       padding: 2.5rem 1rem;
       text-align: center;
     }
+
     header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 2.4rem;
-      color: var(--header-color);
+      color: #ff3366;
       margin-bottom: 0.5rem;
     }
+
     header p {
       font-size: 1.2rem;
       color: #ccc;
     }
+
     .resume-btn {
       display: inline-block;
       margin-top: 1rem;
-      background: var(--accent-color);
+      background: #44ff88;
       color: #000;
       padding: 0.6rem 1.2rem;
       border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
     }
-    .toggle-theme {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--accent-color);
-      border: none;
-      border-radius: 50%;
-      padding: 0.5rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      z-index: 999;
-    }
-    .floating-icons {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      z-index: 999;
-    }
-    .floating-icons a {
-      font-size: 1.5rem;
-      color: #fff;
-      background: #444;
-      padding: 0.6rem;
-      border-radius: 50%;
-      text-align: center;
-      transition: background 0.3s;
-    }
-    .floating-icons a:hover {
-      background: var(--accent-color);
-      color: #000;
-    }
+
     section {
       max-width: 900px;
       margin: 3rem auto;
       padding: 0 1rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    section.reveal {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
     h2 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.8rem;
-      color: var(--accent-color);
-      border-left: 4px solid var(--header-color);
+      color: #44ff88;
+      border-left: 4px solid #ff3366;
       padding-left: 1rem;
       margin-bottom: 1rem;
     }
-    /* ... rest of your existing CSS here ... */
+
+    .about p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #d0d0d0;
+    }
+
+    .projects a {
+      color: #44ff88;
+      font-weight: bold;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .skill-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 3rem;
+      transition: transform 0.4s ease;
+    }
+
+    .skill-icon:hover {
+      transform: scale(1.25) rotate(5deg);
+    }
+
+    .skill-label {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .fa-python { color: #3776AB; }
+    .fa-database { color: #f29111; }
+    .fa-table { color: #E97627; }
+    .fa-chart-line { color: #F2C811; }
+    .fa-aws { color: #FF9900; }
+    .fa-docker { color: #0db7ed; }
+    .fa-cloud { color: #007FFF; }
+    .fa-brain { color: #8a2be2; }
+    .fa-wind { color: #00baff; }
+
+    .timeline-container {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-left: 1rem;
+      border-left: 4px solid transparent;
+    }
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(#3399ff, #ff3366);
+    }
+
+    .timeline-block {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 1rem;
+    }
+
+    .timeline-block::before {
+      content: '●';
+      position: absolute;
+      left: -1.5rem;
+      top: 0;
+      font-size: 1.2rem;
+      color: #44ff88;
+    }
+
+    .timeline-block h3 {
+      margin: 0.2rem 0;
+      color: #ff3366;
+      font-size: 1.2rem;
+    }
+
+    .timeline-block p {
+      margin: 0.2rem 0 0.8rem;
+      color: #d0d0d0;
+      font-size: 1rem;
+    }
+
+    .contact-connect {
+      background: #222;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .contact-connect p {
+      margin-bottom: 1.5rem;
+      color: #d0d0d0;
+      font-size: 1.05rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links a {
+      color: #ff3366;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .contact-links a:hover {
+      transform: scale(1.2);
+      color: #44ff88;
+    }
+
+    form {
+      max-width: 600px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 10px;
+      background: #111;
+      color: #eee;
+      border: 1px solid #444;
+    }
+
+    form button {
+      background: #44ff88;
+      color: #000;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      align-self: center;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
   </style>
 </head>
 <body>
-  <button class="toggle-theme" onclick="document.body.classList.toggle('light-mode')">
-    🌓
-  </button>
-  <div class="floating-icons">
-    <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/shashankyelagandula" target="_blank"><i class="fab fa-github"></i></a>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header id="home">
+  <h1>Hi, I’m Shashank Yelagandula</h1>
+  <p>Aspiring Data Analyst</p>
+  <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about">
+    <p>
+      I’m a passionate data analyst based in Fairfax, Virginia, with an M.S. in Data Analytics Engineering from George Mason University (Arlington, VA), and a B.Tech in Electronics & Communication Engineering from Institute of Aeronautical Engineering (Hyderabad, India). I enjoy translating complex data into actionable insights using modern tools and techniques. I believe in automation, continuous learning, and creating data solutions that make real business impact.
+    </p>
   </div>
+</section>
 
-  <!-- Insert your complete portfolio sections below here -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-icon"><i class="fab fa-python"></i><span class="skill-label">Python</span></div>
+    <div class="skill-icon"><i class="fas fa-database"></i><span class="skill-label">SQL</span></div>
+    <div class="skill-icon"><i class="fas fa-table"></i><span class="skill-label">Tableau</span></div>
+    <div class="skill-icon"><i class="fas fa-chart-line"></i><span class="skill-label">Power BI</span></div>
+    <div class="skill-icon"><i class="fab fa-aws"></i><span class="skill-label">AWS</span></div>
+    <div class="skill-icon"><i class="fab fa-docker"></i><span class="skill-label">Docker</span></div>
+    <div class="skill-icon"><i class="fas fa-cloud"></i><span class="skill-label">Azure</span></div>
+    <div class="skill-icon"><i class="fas fa-brain"></i><span class="skill-label">Databricks</span></div>
+    <div class="skill-icon"><i class="fas fa-wind"></i><span class="skill-label">Airflow</span></div>
+  </div>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const form = document.getElementById('contact-form');
-    const thankyou = document.getElementById('thankyou');
-    form.addEventListener('submit', e => {
-      setTimeout(() => {
-        form.style.display = 'none';
-        thankyou.style.display = 'block';
-      }, 500);
-    });
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline-container">
+    <div class="timeline-block">
+      <h3>MERCK — Data Analyst (Arlington, VA — Mar 2025–Present)</h3>
+      <p>Analyzed large pharma datasets, built interactive Tableau dashboards, optimized SQL ETL workflows, and supported R&D insights.</p>
+    </div>
+    <div class="timeline-block">
+      <h3>Tata Consultancy Services — Data Analyst / System Engineer (Hyderabad, India — Jun 2021–Jan 2023)</h3>
+      <p>Designed & automated ETL pipelines on Azure, built dashboards in Tableau & Excel, reduced reporting time by hours per week.</p>
+    </div>
+    <div class="timeline-block">
+      <h3>Trigent Software — Data Analyst Intern (Hyderabad, India — Aug 2020–May 2021)</h3>
+      <p>Streamlined SQL extraction, developed Excel templates saving hundreds of hours, conducted A/B testing to improve product outcomes.</p>
+    </div>
+  </div>
+</section>
 
-    const revealSections = document.querySelectorAll("section");
-    const revealOnScroll = () => {
-      revealSections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight - 100) {
-          section.classList.add("reveal");
-        }
-      });
-    };
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("load", revealOnScroll);
-  </script>
+<section id="contact">
+  <h2>Connect with Me</h2>
+  <div class="contact-connect">
+    <p>I’d love to connect! Feel free to email, call, link up on LinkedIn or check out my work on GitHub.</p>
+    <div class="contact-links">
+      <a href="mailto:shashankx1569@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+15712932463"><i class="fas fa-phone"></i></a>
+      <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/shashankyelagandula" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+
+    <form action="https://formspree.io/f/mnqknzda" method="POST" id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" name="name" required />
+      <label for="email">Email</label>
+      <input type="email" name="_replyto" required />
+      <label for="message">Message</label>
+      <textarea name="message" rows="5" required></textarea>
+      <button type="submit">Send Message 🚀</button>
+    </form>
+    <p id="thankyou" style="display:none; color:#44ff88; text-align:center; margin-top:1rem;">Thanks! I'll get back to you soon. 🙌</p>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> Shashank Yelagandula — All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const form = document.getElementById('contact-form');
+  const thankyou = document.getElementById('thankyou');
+  form.addEventListener('submit', e => {
+    setTimeout(() => {
+      form.style.display = 'none';
+      thankyou.style.display = 'block';
+    }, 500);
+  });
+</script>
 </body>
 </html>
