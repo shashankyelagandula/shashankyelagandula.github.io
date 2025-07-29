@@ -1,0 +1,7 @@
+"homepage": "https://shashankyelagandula.github.io/shashank-portfolio"
+npm install gh-pages --save-dev
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+npm run deploy
