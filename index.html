@@ -1,72 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shashank Yelagandula Portfolio</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shashank Yelagandula • Portfolio</title>
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Fira+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
   <style>
     body {
-      margin: 0;
-      background: #000;
+      margin: 0; padding: 0;
+      background: #1d1f21;
+      color: #e0e0e0;
       font-family: 'Fira Sans', sans-serif;
-      color: #eee;
-      padding: 0 1rem;
+      scroll-behavior: smooth;
     }
-
-    a {
-      color: #ff3366;
-      text-decoration: none;
-    }
-
-    header {
-      padding: 2rem 1rem;
+    nav {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(90deg,#ff3366,#3399ff,#44ff88);
+      padding: 10px 0;
       text-align: center;
-      position: relative;
+      z-index: 1000;
     }
-
-    .resume-btn {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: #3399ff;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
+    nav a {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: color 0.3s;
     }
-
+    nav a:hover { color: #000; }
+    header {
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
     header h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2rem;
+      font-size: 2.4rem;
       color: #ff3366;
       margin-bottom: 0.5rem;
     }
-
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #ccc;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #44ff88;
+      color: #000;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
     }
 
     section {
-      margin: 3rem auto;
       max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
     }
-
     h2 {
-      color: #3399ff;
       font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: #44ff88;
       border-left: 4px solid #ff3366;
       padding-left: 1rem;
       margin-bottom: 1rem;
     }
 
-    /* Skills */
+    /* About */
+    .about p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #d0d0d0;
+    }
+
+    /* Projects */
+    .projects a {
+      color: #3399ff;
+      font-weight: bold;
+    }
+
+    /* Skills animated icons */
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
@@ -74,7 +92,6 @@
       justify-content: center;
       text-align: center;
     }
-
     .skill-icon {
       display: flex;
       flex-direction: column;
@@ -82,17 +99,15 @@
       font-size: 3rem;
       transition: transform 0.4s ease;
     }
-
     .skill-icon:hover {
-      transform: scale(1.2) rotate(5deg);
+      transform: scale(1.25) rotate(5deg);
     }
-
     .skill-label {
       margin-top: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: bold;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
     }
-
     .fa-python { color: #3776AB; }
     .fa-database { color: #f29111; }
     .fa-table { color: #E97627; }
@@ -101,38 +116,45 @@
     .fa-docker { color: #0db7ed; }
     .fa-cloud { color: #007FFF; }
     .fa-project-diagram { color: #f54291; }
+    .fa-brain { color: #8a2be2; } /* Databricks */
+    .fa-wind { color: #00baff; } /* Airflow */
 
     /* Experience timeline */
     .timeline-container {
-      border-left: 3px solid #ff3366;
       position: relative;
-      margin-left: 2rem;
-      padding-left: 2rem;
+      padding-left: 2.5rem;
+      margin-left: 1rem;
+      border-left: 4px solid transparent;
     }
-
     .timeline-container::before {
       content: '';
       position: absolute;
-      left: -8px;
-      width: 16px;
-      height: 100%;
-      background: linear-gradient(#ff3366, #3399ff);
-      border-radius: 20px;
+      left: 0; top: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(#3399ff,#ff3366);
     }
-
     .timeline-block {
       position: relative;
       margin-bottom: 2.5rem;
+      padding-left: 1rem;
     }
-
+    .timeline-block::before {
+      content: '●';
+      position: absolute;
+      left: -1.5rem;
+      top: 0;
+      font-size: 1.2rem;
+      color: #44ff88;
+    }
     .timeline-block h3 {
-      margin-bottom: 0.2rem;
+      margin: 0.2rem 0;
       color: #ff3366;
+      font-size: 1.2rem;
     }
-
     .timeline-block p {
       margin: 0.2rem 0 0.8rem;
-      color: #bbb;
+      color: #d0d0d0;
+      font-size: 1rem;
     }
 
     /* Education */
@@ -141,104 +163,95 @@
       align-items: center;
       margin-bottom: 1.5rem;
     }
-
     .edu-block i {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-right: 1rem;
-      color: #3399ff;
+      color: #44ff88;
     }
-
     .edu-info strong {
-      font-size: 1.1rem;
-      color: #ff3366;
+      font-size: 1.15rem;
+      color: #3399ff;
+      font-family: 'Orbitron', sans-serif;
     }
-
     .edu-info p {
       margin: 0.2rem 0;
       color: #ccc;
+      font-size: 1rem;
     }
 
-    /* Contact Form */
-    .contact-form {
-      background: #111;
+    /* Contact */
+    .contact-connect {
+      background: #222;
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 0 20px #222;
+      text-align: center;
+      box-shadow: 0 0 20px #000;
     }
-
-    .contact-form label {
-      display: block;
-      margin-top: 1rem;
-      color: #ccc;
+    .contact-connect p {
+      margin-bottom: 1.5rem;
+      color: #d0d0d0;
+      font-size: 1.05rem;
     }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      background: #222;
-      border: 1px solid #444;
-      color: #eee;
-      border-radius: 10px;
-      margin-top: 0.5rem;
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 1.4rem;
     }
-
-    .contact-form button {
-      margin-top: 1.5rem;
-      padding: 0.75rem 2rem;
-      border: none;
-      background: #ff3366;
-      color: white;
-      font-size: 1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .contact-links a {
+      color: #ff3366;
+      text-decoration: none;
+      transition: transform 0.2s;
     }
-
-    .contact-form button:hover {
-      background: #3399ff;
-    }
-
-    #thankyou {
-      margin-top: 1rem;
+    .contact-links a:hover {
+      transform: scale(1.2);
       color: #44ff88;
-      font-weight: bold;
-      display: none;
     }
 
     /* Footer */
     footer {
       text-align: center;
+      color: #777;
       font-size: 0.85rem;
-      margin-top: 5rem;
-      color: #666;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <header>
-  <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
   <h1>Hi, I’m Shashank Yelagandula</h1>
   <p>Aspiring Data Analyst</p>
+  <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
 </header>
 
-<section>
+<section id="about">
   <h2>About Me</h2>
-  <p>
-    I'm a curious and results-oriented data analyst with a passion for turning data into stories and decisions. With hands-on experience in SQL, Python, Tableau, and a Master’s in Data Analytics Engineering, I enjoy solving real-world problems through smart insights and automations.
-  </p>
+  <div class="about">
+    <p>
+      I’m a passionate data analyst based in Fairfax, Virginia, with an M.S. in Data Analytics Engineering from George Mason University (Arlington, VA), and a B.Tech in Electronics & Communication Engineering from Institute of Aeronautical Engineering (Hyderabad, India).
+      I enjoy translating complex data into actionable insights using SQL, Python, Power BI, and Tableau.
+      I believe in automation, continuous learning, and using data for strategic impact in healthcare technology and business.
+    </p>
+  </div>
 </section>
 
-<section>
+<section id="projects">
   <h2>Projects</h2>
-  <p>
-    You can explore my projects on GitHub:  
-    <a href="https://github.com/shashankyelagandula" target="_blank">github.com/shashankyelagandula</a>
-  </p>
+  <p>Explore my projects on GitHub: <a href="https://github.com/shashankyelagandula" target="_blank">github.com/shashankyelagandula</a></p>
 </section>
 
-<section>
+<section id="skills">
   <h2>Skills</h2>
   <div class="skills-grid">
     <div class="skill-icon"><i class="fab fa-python"></i><span class="skill-label">Python</span></div>
@@ -248,62 +261,66 @@
     <div class="skill-icon"><i class="fab fa-aws"></i><span class="skill-label">AWS</span></div>
     <div class="skill-icon"><i class="fab fa-docker"></i><span class="skill-label">Docker</span></div>
     <div class="skill-icon"><i class="fas fa-cloud"></i><span class="skill-label">Azure</span></div>
-    <div class="skill-icon"><i class="fas fa-project-diagram"></i><span class="skill-label">ETL</span></div>
+    <div class="skill-icon"><i class="fas fa-brain"></i><span class="skill-label">Databricks</span></div>
+    <div class="skill-icon"><i class="fas fa-wind"></i><span class="skill-label">Airflow</span></div>
   </div>
 </section>
 
-<section>
+<section id="experience">
   <h2>Experience</h2>
   <div class="timeline-container">
     <div class="timeline-block">
-      <h3>MERCK — Data Analyst (2025–Present)</h3>
-      <p>Analyzed pharma data, built Tableau dashboards, optimized SQL pipelines.</p>
+      <h3>MERCK — Data Analyst (Arlington, VA — Mar 2025–Present)</h3>
+      <p>Analyzed large pharma datasets, built interactive Tableau dashboards, optimized SQL ETL workflows, and supported R&D insights.</p>
     </div>
     <div class="timeline-block">
-      <h3>TCS — Data Analyst / System Engineer (2021–2023)</h3>
-      <p>Created 20+ ETL pipelines on Azure; automated reports with Python & Excel.</p>
+      <h3>Tata Consultancy Services — Data Analyst / System Engineer (Hyderabad, India — Jun 2021–Jan 2023)</h3>
+      <p>Designed & automated ETL pipelines on Azure, built dashboards in Tableau & Excel, reduced reporting time by hours per week.</p>
     </div>
     <div class="timeline-block">
-      <h3>Trigent Software — Data Analyst Intern (2020–2021)</h3>
-      <p>Reduced SQL extraction time, improved Excel reporting, ran A/B testing.</p>
+      <h3>Trigent Software — Data Analyst Intern (Hyderabad, India — Aug 2020–May 2021)</h3>
+      <p>Streamlined SQL extraction, developed Excel templates saving hundreds of hours, conducted A/B testing to improve product outcomes.</p>
     </div>
   </div>
 </section>
 
-<section>
+<section id="education">
   <h2>Education</h2>
   <div class="edu-block">
     <i class="fas fa-graduation-cap"></i>
     <div class="edu-info">
-      <strong><a href="https://www.gmu.edu" target="_blank">George Mason University</a></strong>
-      <p>MS in Data Analytics Engineering (2023–2024)</p>
+      <strong>Master of Science in Data Analytics Engineering, George Mason University</strong>
+      <p>Arlington, Virginia (2023–2024)</p>
     </div>
   </div>
   <div class="edu-block">
     <i class="fas fa-university"></i>
     <div class="edu-info">
-      <strong><a href="https://www.iare.ac.in" target="_blank">Institute of Aeronautical Engineering</a></strong>
-      <p>B.Tech in ECE (2017–2021)</p>
+      <strong>Bachelor of Technology in Electronics & Communication Engineering, Institute of Aeronautical Engineering</strong>
+      <p>Hyderabad, India (2017–2021)</p>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Send Me a Message ✉️</h2>
-  <div class="contact-form">
-    <form action="https://formspree.io/f/mnqknzda" method="POST" id="contact-form">
-      <label for="name">Name</label>
-      <input type="text" name="name" required />
+<section id="contact">
+  <h2>Connect with Me</h2>
+  <div class="contact-connect">
+    <p>I’d love to connect! Feel free to email, call, link up on LinkedIn or check out my work on GitHub.</p>
+    <div class="contact-links">
+      <a href="mailto:shashankx1569@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+15712932463"><i class="fas fa-phone"></i></a>
+      <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/shashankyelagandula" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
 
-      <label for="email">Email</label>
-      <input type="email" name="_replyto" required />
-
-      <label for="message">Message</label>
-      <textarea name="message" rows="5" required></textarea>
-
-      <button type="submit">Send 🚀</button>
+    <!-- Formspree contact -->
+    <form action="https://formspree.io/f/mnqknzda" method="POST" id="contact-form" style="margin-top:2rem; max-width:600px; margin-left:auto; margin-right:auto;">
+      <label for="name">Name</label><input type="text" name="name" required /><br/>
+      <label for="email">Email</label><input type="email" name="_replyto" required /><br/>
+      <label for="message">Message</label><textarea name="message" rows="5" required></textarea><br/>
+      <button type="submit">Send Message 🚀</button>
     </form>
-    <p id="thankyou">Thank you! I’ll get back to you soon. 🙌</p>
+    <p id="thankyou" style="display:none; color:#44ff88; text-align:center; margin-top:1rem;">Thanks! I'll get back to you soon. 🙌</p>
   </div>
 </section>
 
@@ -313,17 +330,14 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const form = document.getElementById('contact-form');
   const thankyou = document.getElementById('thankyou');
-
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', e => {
     setTimeout(() => {
       form.style.display = 'none';
       thankyou.style.display = 'block';
     }, 500);
   });
 </script>
-
 </body>
 </html>
