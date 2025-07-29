@@ -15,6 +15,12 @@
       color: #e0e0e0;
       font-family: 'Fira Sans', sans-serif;
       scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      background: #f5f5f5;
+      color: #1d1f21;
     }
 
     nav {
@@ -40,217 +46,65 @@
       color: #44ff88;
     }
 
-    header {
-      padding: 2.5rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.4rem;
-      color: #ff3366;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    .resume-btn {
-      display: inline-block;
-      margin-top: 1rem;
+    .toggle-mode {
+      position: fixed;
+      top: 15px;
+      right: 15px;
       background: #44ff88;
       color: #000;
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
-      color: #44ff88;
-      border-left: 4px solid #ff3366;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .about p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #d0d0d0;
-    }
-
-    .projects a {
-      color: #44ff88;
-      font-weight: bold;
-    }
-
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .skill-icon {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 3rem;
-      transition: transform 0.4s ease;
-    }
-
-    .skill-icon:hover {
-      transform: scale(1.25) rotate(5deg);
-    }
-
-    .skill-label {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .fa-python { color: #3776AB; }
-    .fa-database { color: #f29111; }
-    .fa-table { color: #E97627; }
-    .fa-chart-line { color: #F2C811; }
-    .fa-aws { color: #FF9900; }
-    .fa-docker { color: #0db7ed; }
-    .fa-cloud { color: #007FFF; }
-    .fa-brain { color: #8a2be2; }
-    .fa-wind { color: #00baff; }
-
-    .timeline-container {
-      position: relative;
-      padding-left: 2.5rem;
-      margin-left: 1rem;
-      border-left: 4px solid transparent;
-    }
-
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(#3399ff, #ff3366);
-    }
-
-    .timeline-block {
-      position: relative;
-      margin-bottom: 2.5rem;
-      padding-left: 1rem;
-    }
-
-    .timeline-block::before {
-      content: '●';
-      position: absolute;
-      left: -1.5rem;
-      top: 0;
-      font-size: 1.2rem;
-      color: #44ff88;
-    }
-
-    .timeline-block h3 {
-      margin: 0.2rem 0;
-      color: #ff3366;
-      font-size: 1.2rem;
-    }
-
-    .timeline-block p {
-      margin: 0.2rem 0 0.8rem;
-      color: #d0d0d0;
-      font-size: 1rem;
-    }
-
-    .contact-connect {
-      background: #222;
-      padding: 2rem;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 0 20px #000;
-    }
-
-    .contact-connect p {
-      margin-bottom: 1.5rem;
-      color: #d0d0d0;
-      font-size: 1.05rem;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-    }
-
-    .contact-links a {
-      color: #ff3366;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-
-    .contact-links a:hover {
-      transform: scale(1.2);
-      color: #44ff88;
-    }
-
-    form {
-      max-width: 600px;
-      margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      text-align: left;
-    }
-
-    form label {
-      font-weight: bold;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 0.6rem;
-      border-radius: 10px;
-      background: #111;
-      color: #eee;
-      border: 1px solid #444;
-    }
-
-    form button {
-      background: #44ff88;
-      color: #000;
-      font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
       border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
       cursor: pointer;
-      align-self: center;
+      font-weight: bold;
+      z-index: 1100;
     }
 
-    footer {
+    .floating-btns {
+      position: fixed;
+      right: 15px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+
+    .floating-btns a {
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 1.2rem;
       text-align: center;
-      color: #777;
-      font-size: 0.85rem;
-      margin-top: 4rem;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .floating-btns a:hover {
+      background: #44ff88;
+      color: #000;
+      transform: scale(1.15);
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-reveal].visible {
+      opacity: 1;
+      transform: none;
     }
   </style>
 </head>
 <body>
+
+<button class="toggle-mode" onclick="toggleMode()">🌓 Toggle Mode</button>
+<div class="floating-btns">
+  <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="https://github.com/shashankyelagandula" target="_blank"><i class="fab fa-github"></i></a>
+</div>
 
 <nav>
   <a href="#home">Home</a>
@@ -260,13 +114,13 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<header id="home">
+<header id="home" data-reveal>
   <h1>Hi, I’m Shashank Yelagandula</h1>
   <p>Aspiring Data Analyst</p>
   <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
 </header>
 
-<section id="about">
+<section id="about" data-reveal>
   <h2>About Me</h2>
   <div class="about">
     <p>
@@ -275,7 +129,7 @@
   </div>
 </section>
 
-<section id="skills">
+<section id="skills" data-reveal>
   <h2>Skills</h2>
   <div class="skills-grid">
     <div class="skill-icon"><i class="fab fa-python"></i><span class="skill-label">Python</span></div>
@@ -290,7 +144,7 @@
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" data-reveal>
   <h2>Experience</h2>
   <div class="timeline-container">
     <div class="timeline-block">
@@ -308,7 +162,7 @@
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-reveal>
   <h2>Connect with Me</h2>
   <div class="contact-connect">
     <p>I’d love to connect! Feel free to email, call, link up on LinkedIn or check out my work on GitHub.</p>
@@ -346,6 +200,23 @@
       thankyou.style.display = 'block';
     }, 500);
   });
+
+  // Reveal on scroll
+  const revealElements = document.querySelectorAll('[data-reveal]');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // Toggle light/dark
+  function toggleMode() {
+    document.body.classList.toggle('light-mode');
+  }
 </script>
 </body>
 </html>
