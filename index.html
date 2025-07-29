@@ -12,10 +12,15 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Fira Sans', sans-serif;
       background: #000;
+      font-family: 'Fira Sans', sans-serif;
       color: #eee;
       padding: 0 1rem;
+    }
+
+    a {
+      color: #ff3366;
+      text-decoration: none;
     }
 
     header {
@@ -55,90 +60,110 @@
 
     h2 {
       color: #3399ff;
+      font-family: 'Orbitron', sans-serif;
       border-left: 4px solid #ff3366;
       padding-left: 1rem;
       margin-bottom: 1rem;
     }
 
-    /* About */
-    .about {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #ddd;
-    }
-
-    /* Skills with icons */
+    /* Skills */
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 2rem;
       justify-content: center;
-      font-size: 2.5rem;
+      text-align: center;
     }
 
-    .skills-grid i {
-      transition: transform 0.3s;
-      color: #ff3366;
+    .skill-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 3rem;
+      transition: transform 0.4s ease;
     }
 
-    .skills-grid i:hover {
-      transform: scale(1.3);
-      color: #3399ff;
+    .skill-icon:hover {
+      transform: scale(1.2) rotate(5deg);
     }
 
-    /* Projects */
-    .project {
-      margin-bottom: 2rem;
-    }
-    .project h3 {
-      margin: 0.2rem 0;
-    }
-    .project a {
-      color: #ff3366;
+    .skill-label {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
 
-    /* Timeline */
-    .timeline {
+    .fa-python { color: #3776AB; }
+    .fa-database { color: #f29111; }
+    .fa-table { color: #E97627; }
+    .fa-chart-line { color: #F2C811; }
+    .fa-aws { color: #FF9900; }
+    .fa-docker { color: #0db7ed; }
+    .fa-cloud { color: #007FFF; }
+    .fa-project-diagram { color: #f54291; }
+
+    /* Experience timeline */
+    .timeline-container {
       border-left: 3px solid #ff3366;
-      padding-left: 2rem;
       position: relative;
+      margin-left: 2rem;
+      padding-left: 2rem;
     }
 
-    .timeline::before {
+    .timeline-container::before {
       content: '';
       position: absolute;
-      left: -7px;
-      top: 0;
-      bottom: 0;
-      width: 12px;
+      left: -8px;
+      width: 16px;
+      height: 100%;
       background: linear-gradient(#ff3366, #3399ff);
-      border-radius: 10px;
+      border-radius: 20px;
     }
 
-    .job {
-      margin-bottom: 2.5rem;
+    .timeline-block {
       position: relative;
+      margin-bottom: 2.5rem;
     }
 
-    .job::before {
-      content: '⬤';
-      position: absolute;
-      left: -2rem;
-      color: #3399ff;
-      font-size: 1.2rem;
-    }
-
-    .job h3 {
-      margin-bottom: 0.3rem;
+    .timeline-block h3 {
+      margin-bottom: 0.2rem;
       color: #ff3366;
     }
 
-    /* Contact */
+    .timeline-block p {
+      margin: 0.2rem 0 0.8rem;
+      color: #bbb;
+    }
+
+    /* Education */
+    .edu-block {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-block i {
+      font-size: 1.8rem;
+      margin-right: 1rem;
+      color: #3399ff;
+    }
+
+    .edu-info strong {
+      font-size: 1.1rem;
+      color: #ff3366;
+    }
+
+    .edu-info p {
+      margin: 0.2rem 0;
+      color: #ccc;
+    }
+
+    /* Contact Form */
     .contact-form {
       background: #111;
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 0 15px #222;
+      box-shadow: 0 0 20px #222;
     }
 
     .contact-form label {
@@ -184,7 +209,7 @@
     /* Footer */
     footer {
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       margin-top: 5rem;
       color: #666;
     }
@@ -192,107 +217,113 @@
 </head>
 <body>
 
-  <header>
-    <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
-    <h1>Hi, I’m Shashank Yelagandula</h1>
-    <p>Aspiring Data Analyst | SQL • Python • Power BI • Tableau</p>
-  </header>
+<header>
+  <a href="resume.pdf" class="resume-btn" target="_blank">📄 Download Resume</a>
+  <h1>Hi, I’m Shashank Yelagandula</h1>
+  <p>Aspiring Data Analyst</p>
+</header>
 
-  <section>
-    <h2>About Me</h2>
-    <p class="about">
-      I'm a curious and results-driven analyst who transforms raw data into insights and solutions. With a Master’s in Data Analytics Engineering and hands-on experience with SQL, Python, and BI tools, I thrive at the intersection of tech and impact.
-    </p>
-  </section>
+<section>
+  <h2>About Me</h2>
+  <p>
+    I'm a curious and results-oriented data analyst with a passion for turning data into stories and decisions. With hands-on experience in SQL, Python, Tableau, and a Master’s in Data Analytics Engineering, I enjoy solving real-world problems through smart insights and automations.
+  </p>
+</section>
 
-  <section>
-    <h2>Projects</h2>
+<section>
+  <h2>Projects</h2>
+  <p>
+    You can explore my projects on GitHub:  
+    <a href="https://github.com/shashankyelagandula" target="_blank">github.com/shashankyelagandula</a>
+  </p>
+</section>
 
-    <div class="project">
-      <h3><a href="https://github.com/shashankyelagandula/llm-kg-extraction" target="_blank">🧠 LLM for Knowledge Graph Extraction</a></h3>
-      <p>Built ML pipeline in Amazon SageMaker converting unstructured data to graph database (Neo4j) with 75% accuracy.</p>
+<section>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-icon"><i class="fab fa-python"></i><span class="skill-label">Python</span></div>
+    <div class="skill-icon"><i class="fas fa-database"></i><span class="skill-label">SQL</span></div>
+    <div class="skill-icon"><i class="fas fa-table"></i><span class="skill-label">Tableau</span></div>
+    <div class="skill-icon"><i class="fas fa-chart-line"></i><span class="skill-label">Power BI</span></div>
+    <div class="skill-icon"><i class="fab fa-aws"></i><span class="skill-label">AWS</span></div>
+    <div class="skill-icon"><i class="fab fa-docker"></i><span class="skill-label">Docker</span></div>
+    <div class="skill-icon"><i class="fas fa-cloud"></i><span class="skill-label">Azure</span></div>
+    <div class="skill-icon"><i class="fas fa-project-diagram"></i><span class="skill-label">ETL</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div class="timeline-container">
+    <div class="timeline-block">
+      <h3>MERCK — Data Analyst (2025–Present)</h3>
+      <p>Analyzed pharma data, built Tableau dashboards, optimized SQL pipelines.</p>
     </div>
-
-    <div class="project">
-      <h3><a href="https://github.com/shashankyelagandula/heart-health" target="_blank">❤️ Cardiovascular Health Risk Analysis</a></h3>
-      <p>Trained gradient boosting model (74% accuracy) to predict risk using clinical data patterns.</p>
+    <div class="timeline-block">
+      <h3>TCS — Data Analyst / System Engineer (2021–2023)</h3>
+      <p>Created 20+ ETL pipelines on Azure; automated reports with Python & Excel.</p>
     </div>
-
-    <p style="margin-top: 1rem;">
-      🧰 More projects on GitHub: <a href="https://github.com/shashankyelagandula" target="_blank">github.com/shashankyelagandula</a>
-    </p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <i class="fab fa-python" title="Python"></i>
-      <i class="fas fa-database" title="SQL"></i>
-      <i class="fas fa-chart-line" title="Power BI"></i>
-      <i class="fas fa-table" title="Tableau"></i>
-      <i class="fab fa-aws" title="AWS"></i>
-      <i class="fab fa-docker" title="Docker"></i>
-      <i class="fas fa-cloud" title="Azure"></i>
-      <i class="fas fa-project-diagram" title="ETL & Pipelines"></i>
+    <div class="timeline-block">
+      <h3>Trigent Software — Data Analyst Intern (2020–2021)</h3>
+      <p>Reduced SQL extraction time, improved Excel reporting, ran A/B testing.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>Experience</h2>
-    <div class="timeline">
-      <div class="job">
-        <h3>MERCK — Data Analyst (2025–Present)</h3>
-        <p>Optimized SQL workflows, built Tableau dashboards, and analyzed 100K+ pharma records.</p>
-      </div>
-      <div class="job">
-        <h3>TCS — Data Analyst / System Engineer (2021–2023)</h3>
-        <p>Created ETL pipelines in Azure, automated dashboards with Python/VBA, saved 30+ hrs/month.</p>
-      </div>
-      <div class="job">
-        <h3>Trigent — Data Analyst Intern (2020–2021)</h3>
-        <p>Reduced SQL extraction time by 20%, engineered reusable Excel templates, ran A/B tests.</p>
-      </div>
+<section>
+  <h2>Education</h2>
+  <div class="edu-block">
+    <i class="fas fa-graduation-cap"></i>
+    <div class="edu-info">
+      <strong><a href="https://www.gmu.edu" target="_blank">George Mason University</a></strong>
+      <p>MS in Data Analytics Engineering (2023–2024)</p>
     </div>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <p><strong><a href="https://www.gmu.edu" target="_blank">George Mason University</a></strong> — MS in Data Analytics Engineering (2023–2024)</p>
-    <p><strong><a href="https://www.iare.ac.in" target="_blank">Institute of Aeronautical Engineering</a></strong> — B.Tech in ECE (2017–2021)</p>
-  </section>
-
-  <section>
-    <h2>Send Me a Message ✉️</h2>
-    <div class="contact-form">
-      <form id="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" required />
-        <label for="email">Email</label>
-        <input type="email" id="email" required />
-        <label for="message">Message</label>
-        <textarea id="message" rows="5" required></textarea>
-        <button type="submit">Send 🚀</button>
-      </form>
-      <p id="thankyou">Thank you! I’ll get back to you soon. 🙌</p>
+  </div>
+  <div class="edu-block">
+    <i class="fas fa-university"></i>
+    <div class="edu-info">
+      <strong><a href="https://www.iare.ac.in" target="_blank">Institute of Aeronautical Engineering</a></strong>
+      <p>B.Tech in ECE (2017–2021)</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    &copy; <span id="year"></span> Shashank Yelagandula — All rights reserved.
-  </footer>
+<section>
+  <h2>Send Me a Message ✉️</h2>
+  <div class="contact-form">
+    <form action="https://formspree.io/f/mnqknzda" method="POST" id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" name="name" required />
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+      <label for="email">Email</label>
+      <input type="email" name="_replyto" required />
 
-    const form = document.getElementById('contact-form');
-    const thankyou = document.getElementById('thankyou');
+      <label for="message">Message</label>
+      <textarea name="message" rows="5" required></textarea>
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+      <button type="submit">Send 🚀</button>
+    </form>
+    <p id="thankyou">Thank you! I’ll get back to you soon. 🙌</p>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> Shashank Yelagandula — All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('contact-form');
+  const thankyou = document.getElementById('thankyou');
+
+  form.addEventListener('submit', function(e) {
+    setTimeout(() => {
       form.style.display = 'none';
       thankyou.style.display = 'block';
-    });
-  </script>
+    }, 500);
+  });
+</script>
 
 </body>
 </html>
