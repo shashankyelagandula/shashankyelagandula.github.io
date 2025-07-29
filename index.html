@@ -4,356 +4,340 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shashank Yelagandula - Portfolio</title>
+
+<!-- Retro-modern font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
-  
-  :root {
-    --bg-light: #f0e9e1;
-    --text-light: #2d2d2d;
-    --accent-light: #ff5f5f;
-    --accent2-light: #ffb347;
-    --card-bg-light: #fff8f0;
-    --input-bg-light: #fff;
-    --border-light: #d1c7b7;
-    
-    --bg-dark: #1a1a2e;
-    --text-dark: #eaeaea;
-    --accent-dark: #ff6f91;
-    --accent2-dark: #f9bc60;
-    --card-bg-dark: #222240;
-    --input-bg-dark: #333366;
-    --border-dark: #444466;
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
   }
-  
-  /* Theme detection */
   body {
-    margin: 0; padding: 0;
-    font-family: 'Courier Prime', monospace;
-    background-color: var(--bg-light);
-    color: var(--text-light);
-    transition: background-color 0.5s, color 0.5s;
-    user-select: none;
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Orbitron', monospace;
+    overflow-x: hidden;
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-  }
-  
   a {
-    color: var(--accent-light);
-    font-weight: bold;
+    color: #ff3366;
     text-decoration: none;
+    font-weight: 700;
     transition: color 0.3s ease;
   }
-  @media (prefers-color-scheme: dark) {
-    a {
-      color: var(--accent-dark);
-    }
+  a:hover, a:focus {
+    color: #3399ff;
+    text-shadow: 0 0 8px #3399ff;
   }
-  a:hover {
-    color: var(--accent2-light);
-  }
-  @media (prefers-color-scheme: dark) {
-    a:hover {
-      color: var(--accent2-dark);
-    }
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem 2rem;
-    background-color: var(--card-bg-light);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    border: 2px solid var(--border-light);
-  }
-  @media (prefers-color-scheme: dark) {
-    .container {
-      background-color: var(--card-bg-dark);
-      border: 2px solid var(--border-dark);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-    }
-  }
-  
   h1, h2, h3 {
-    margin-top: 0;
-    letter-spacing: 1.2px;
-  }
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.3rem;
-    color: var(--accent-light);
-    text-shadow: 1px 1px 2px var(--accent2-light);
-  }
-  @media (prefers-color-scheme: dark) {
-    h1 {
-      color: var(--accent-dark);
-      text-shadow: 1px 1px 2px var(--accent2-dark);
-    }
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff3366;
+    text-shadow: 0 0 6px #ff3366;
   }
   h2 {
-    color: var(--accent2-light);
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--accent2-light);
-    padding-bottom: 0.2rem;
+    color: #3399ff;
+    text-shadow: 0 0 6px #3399ff;
   }
-  @media (prefers-color-scheme: dark) {
-    h2 {
-      color: var(--accent2-dark);
-      border-bottom: 2px solid var(--accent2-dark);
-    }
-  }
-  
   p {
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 1.5rem;
   }
-  
-  ul {
-    padding-left: 1.2rem;
-    margin-bottom: 1rem;
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
   }
-  
-  .contact-links a {
-    margin-right: 1.2rem;
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
   }
-  
+  nav.contact-links a {
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    position: relative;
+  }
+  nav.contact-links a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #ff3366;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+  }
+  nav.contact-links a:hover::after,
+  nav.contact-links a:focus::after {
+    width: 100%;
+    background: #3399ff;
+  }
+  section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Skill tags */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
   .skill-tag {
-    display: inline-block;
-    background-color: var(--accent2-light);
-    color: var(--bg-light);
-    padding: 0.3rem 0.6rem;
-    margin: 0.1rem 0.3rem 0.3rem 0;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    background: #ff3366;
+    color: #000;
+    padding: 0.35rem 1rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 0 6px #ff3366;
+    transition: background 0.3s ease;
   }
-  @media (prefers-color-scheme: dark) {
-    .skill-tag {
-      background-color: var(--accent2-dark);
-      color: var(--bg-dark);
-    }
+  .skill-tag:hover {
+    background: #3399ff;
+    color: #fff;
+    box-shadow: 0 0 10px #3399ff;
+    cursor: default;
   }
-  
+  /* Contact form */
   form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     max-width: 600px;
+    margin: 0 auto;
   }
-  
   input, textarea {
-    background-color: var(--input-bg-light);
-    border: 2px solid var(--border-light);
-    border-radius: 8px;
-    padding: 0.8rem;
-    font-family: inherit;
+    background: #111;
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    font-family: 'Orbitron', monospace;
     font-size: 1rem;
-    color: var(--text-light);
-    transition: border-color 0.3s;
+    color: #eee;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  input:focus, textarea:focus {
+    border-color: #ff3366;
+    box-shadow: 0 0 10px #ff3366;
+    outline: none;
+  }
+  textarea {
+    min-height: 120px;
     resize: vertical;
   }
-  @media (prefers-color-scheme: dark) {
-    input, textarea {
-      background-color: var(--input-bg-dark);
-      border: 2px solid var(--border-dark);
-      color: var(--text-dark);
-    }
-  }
-  
-  input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--accent-light);
-    box-shadow: 0 0 8px var(--accent-light);
-  }
-  @media (prefers-color-scheme: dark) {
-    input:focus, textarea:focus {
-      border-color: var(--accent-dark);
-      box-shadow: 0 0 8px var(--accent-dark);
-    }
-  }
-  
   button {
-    background-color: var(--accent-light);
-    color: var(--bg-light);
+    background: #ff3366;
+    color: #000;
     font-weight: 700;
     border: none;
-    border-radius: 12px;
-    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    padding: 1rem 1.8rem;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
     cursor: pointer;
-    letter-spacing: 1.2px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
     align-self: flex-start;
+    box-shadow: 0 0 12px #ff3366;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
   }
-  button:hover {
-    background-color: var(--accent2-light);
+  button:hover, button:focus {
+    background: #3399ff;
+    color: #fff;
+    box-shadow: 0 0 16px #3399ff;
+    outline: none;
   }
-  @media (prefers-color-scheme: dark) {
-    button {
-      background-color: var(--accent-dark);
-      color: var(--bg-dark);
-    }
-    button:hover {
-      background-color: var(--accent2-dark);
-    }
+  #thankyou {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ff3366;
+    margin-top: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
   }
-  
+  #thankyou.visible {
+    opacity: 1;
+  }
+  /* Footer */
   footer {
     text-align: center;
     font-size: 0.85rem;
-    margin-top: 3rem;
-    color: var(--border-light);
+    color: #444;
+    letter-spacing: 1.5px;
+    margin-top: 5rem;
   }
-  @media (prefers-color-scheme: dark) {
-    footer {
-      color: var(--border-dark);
-    }
-  }
-  
+  /* Responsive */
   @media (max-width: 600px) {
-    .container {
+    main {
       margin: 1rem;
-      padding: 1rem;
+      padding: 0 1rem 2rem;
     }
-    h1 {
-      font-size: 2rem;
+    nav.contact-links a {
+      margin: 0 0.5rem;
+      font-size: 1rem;
     }
   }
 </style>
 </head>
 <body>
-  <main class="container" role="main">
-    <header>
-      <h1>Shashank Yelagandula</h1>
-      <p><em>Data Analyst | SQL, Python, Tableau, Power BI | ETL & Big Data</em></p>
-      <nav class="contact-links" aria-label="Contact Links">
-        <a href="mailto:shashankx1569@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-        <a href="tel:+15712932463" target="_blank" rel="noopener noreferrer">Call</a>
-        <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
-    </header>
 
-    <section aria-labelledby="summary-heading">
-      <h2 id="summary-heading">Summary</h2>
-      <p>Hi, I’m Shashank Yelagandula — a results-driven Data Analyst with 3+ years of experience uncovering insights from complex datasets to drive business outcomes. I specialize in translating large datasets into strategic insights using SQL, Python, Tableau & Power BI, and automating workflows cutting processing time by 25–40%.</p>
-    </section>
+<main role="main">
+  <header>
+    <h1>Shashank Yelagandula</h1>
+    <p style="font-style: italic; color: #bbb; margin-bottom: 1rem;">
+      Data Analyst | SQL, Python, Tableau, Power BI | ETL & Big Data
+    </p>
+    <nav class="contact-links" aria-label="Contact Links">
+      <a href="mailto:shashankx1569@gmail.com" target="_blank" rel="noopener noreferrer" tabindex="0">Email</a>
+      <a href="tel:+15712932463" target="_blank" rel="noopener noreferrer" tabindex="0">Call</a>
+      <a href="https://www.linkedin.com/in/shashank-yelagandula-7a3b391b0" target="_blank" rel="noopener noreferrer" tabindex="0">LinkedIn</a>
+      <a href="https://github.com/shashankyelagandula" target="_blank" rel="noopener noreferrer" tabindex="0">GitHub</a>
+    </nav>
+  </header>
 
-    <section aria-labelledby="experience-heading">
-      <h2 id="experience-heading">Experience</h2>
+  <section id="summary" tabindex="0" aria-label="Summary">
+    <h2>Summary</h2>
+    <p>Hi, I’m Shashank Yelagandula — a results-driven Data Analyst with 3+ years of experience uncovering insights from complex datasets to drive business outcomes. I specialize in translating large datasets into strategic insights using SQL, Python, Tableau & Power BI, and automating workflows cutting processing time by 25–40%.</p>
+  </section>
 
-      <article aria-label="MERCK">
-        <h3>Data Analyst — MERCK (Mar 2025 - Present)</h3>
-        <ul>
-          <li>Derived actionable insights from healthcare datasets (100,000+ records) supporting pharmaceutical R&D.</li>
-          <li>Optimized SQL queries improving reporting workflows by 30%.</li>
-          <li>Built dashboards in Excel & Tableau enabling data-driven community programs.</li>
-        </ul>
-      </article>
+  <section id="experience" tabindex="0" aria-label="Experience">
+    <h2>Experience</h2>
 
-      <article aria-label="Tata Consultancy Services">
-        <h3>System Engineer / Data Analyst — TCS (Jun 2021 - Jan 2023)</h3>
-        <ul>
-          <li>Redesigned 15+ Tableau dashboards reducing report time by 8-10 hrs/week.</li>
-          <li>Optimized SQL for 5+ TB data, improving retrieval by 40%.</li>
-          <li>Built 20+ ETL pipelines on Azure, saving 30+ hrs/month manual work.</li>
-          <li>Automated Excel dashboards with Power Query, VBA, Python email alerts.</li>
-        </ul>
-      </article>
+    <article aria-label="MERCK experience">
+      <h3>Data Analyst — MERCK (Mar 2025 - Present)</h3>
+      <ul>
+        <li>Derived actionable insights from healthcare datasets (100,000+ records) supporting pharmaceutical R&D.</li>
+        <li>Optimized SQL queries improving reporting workflows by 30%.</li>
+        <li>Built dashboards in Excel & Tableau enabling data-driven community programs.</li>
+      </ul>
+    </article>
 
-      <article aria-label="Trigent Software">
-        <h3>Data Analyst Intern — Trigent Software (Aug 2020 - May 2021)</h3>
-        <ul>
-          <li>Streamlined SQL, reducing extraction time by 20%.</li>
-          <li>Engineered Excel templates, cutting manual effort by 180+ hours/year.</li>
-          <li>Conducted A/B testing to improve product conversion rates.</li>
-        </ul>
-      </article>
-    </section>
+    <article aria-label="Tata Consultancy Services experience">
+      <h3>System Engineer / Data Analyst — TCS (Jun 2021 - Jan 2023)</h3>
+      <ul>
+        <li>Redesigned 15+ Tableau dashboards reducing report time by 8-10 hrs/week.</li>
+        <li>Optimized SQL for 5+ TB data, improving retrieval by 40%.</li>
+        <li>Built 20+ ETL pipelines on Azure, saving 30+ hrs/month manual work.</li>
+        <li>Automated Excel dashboards with Power Query, VBA, Python email alerts.</li>
+      </ul>
+    </article>
 
-    <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills & Tools</h2>
-      <div>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">Azure</span>
-        <span class="skill-tag">AWS</span>
-        <span class="skill-tag">Databricks</span>
-        <span class="skill-tag">Airflow</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">ETL Pipelines</span>
-        <span class="skill-tag">Predictive Analytics</span>
-        <span class="skill-tag">Data Governance</span>
-      </div>
-    </section>
+    <article aria-label="Trigent Software experience">
+      <h3>Data Analyst Intern — Trigent Software (Aug 2020 - May 2021)</h3>
+      <ul>
+        <li>Streamlined SQL, reducing extraction time by 20%.</li>
+        <li>Engineered Excel templates, cutting manual effort by 180+ hours/year.</li>
+        <li>Conducted A/B testing to improve product conversion rates.</li>
+      </ul>
+    </article>
+  </section>
 
-    <section aria-labelledby="education-heading">
-      <h2 id="education-heading">Education</h2>
-      <p><strong>Master’s in Data Analytics Engineering</strong>, George Mason University (2023 - 2024)</p>
-      <p><strong>Bachelor’s in Electronics and Communication Engineering</strong>, Institute of Aeronautical Engineering (2017 - 2021)</p>
-    </section>
+  <section id="skills" tabindex="0" aria-label="Skills and Tools">
+    <h2>Skills & Tools</h2>
+    <div class="skills-container">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Tableau</span>
+      <span class="skill-tag">Power BI</span>
+      <span class="skill-tag">Azure</span>
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag">Databricks</span>
+      <span class="skill-tag">Airflow</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">ETL Pipelines</span>
+      <span class="skill-tag">Predictive Analytics</span>
+      <span class="skill-tag">Data Governance</span>
+    </div>
+  </section>
 
-    <section aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <article>
-        <h3>Large Language Model for Knowledge Graph Extraction</h3>
-        <p>Built ML pipelines in Amazon SageMaker transforming unstructured data to knowledge graphs with 75% extraction accuracy; deployed on Neo4j, boosting efficiency 40%.</p>
-      </article>
-      <article>
-        <h3>Cardiovascular Health Patterns Analytics</h3>
-        <p>Developed gradient boosting predictive models with 74% accuracy to identify critical health indicators for cardiovascular disease prevention.</p>
-      </article>
-    </section>
+  <section id="education" tabindex="0" aria-label="Education">
+    <h2>Education</h2>
+    <p><strong>Master’s in Data Analytics Engineering</strong>, George Mason University (2023 - 2024)</p>
+    <p><strong>Bachelor’s in Electronics and Communication Engineering</strong>, Institute of Aeronautical Engineering (2017 - 2021)</p>
+  </section>
 
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Send Me a Message</h2>
-      <form id="contact-form" aria-label="Contact form">
-        <input type="text" id="name" placeholder="Your Name" aria-label="Name" required />
-        <input type="email" id="email" placeholder="Your Email" aria-label="Email" required />
-        <textarea id="message" placeholder="Your Message" aria-label="Message" rows="4" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-      <p id="thankyou" style="font-weight:600; color:#ff5f5f; display:none; margin-top:1rem;">
-        Thanks for your message! I'll get back to you soon.
-      </p>
-    </section>
+  <section id="projects" tabindex="0" aria-label="Projects">
+    <h2>Projects</h2>
+    <article>
+      <h3>Large Language Model for Knowledge Graph Extraction</h3>
+      <p>Built ML pipelines in Amazon SageMaker transforming unstructured data to knowledge graphs with 75% extraction accuracy; deployed on Neo4j, boosting efficiency 40%.</p>
+    </article>
+    <article>
+      <h3>Cardiovascular Health Patterns Analytics</h3>
+      <p>Developed gradient boosting predictive models with 74% accuracy to identify critical health indicators for cardiovascular disease prevention.</p>
+    </article>
+  </section>
 
-    <footer>
-      &copy; <span id="year"></span> Shashank Yelagandula. All rights reserved.
-    </footer>
-  </main>
+  <section id="contact" tabindex="0" aria-label="Contact form">
+    <h2>Send Me a Message</h2>
+    <form id="contact-form" aria-label="Contact form">
+      <input type="text" id="name" placeholder="Your Name" aria-label="Name" required autocomplete="name" />
+      <input type="email" id="email" placeholder="Your Email" aria-label="Email" required autocomplete="email" />
+      <textarea id="message" placeholder="Your Message" aria-label="Message" rows="4" required></textarea>
+      <button type="submit" aria-label="Send message button">Send</button>
+    </form>
+    <p id="thankyou" aria-live="polite" role="alert">Thanks for your message! I'll get back to you soon.</p>
+  </section>
 
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <footer>
+    &copy; <span id="year"></span> Shashank Yelagandula. All rights reserved.
+  </footer>
+</main>
 
-    // Simple form handling (no backend)
-    const form = document.getElementById('contact-form');
-    const thankyou = document.getElementById('thankyou');
+<script>
+  // Fade in sections on scroll
+  function revealOnScroll() {
+    const sections = document.querySelectorAll('section');
+    const triggerBottom = window.innerHeight * 0.85;
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      // Basic validation
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-
-      if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < triggerBottom) {
+        section.classList.add('visible');
       }
-
-      // Show thank you message & reset form
-      form.style.display = 'none';
-      thankyou.style.display = 'block';
-      form.reset();
     });
-  </script>
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+
+  // Set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Form submission logic
+  const form = document.getElementById('contact-form');
+  const thankyou = document.getElementById('thankyou');
+  thankyou.style.opacity = 0;
+  thankyou.style.display = 'none';
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    form.style.display = 'none';
+    thankyou.style.display = 'block';
+    thankyou.classList.add('visible');
+    form.reset();
+  });
+</script>
+
 </body>
 </html>
